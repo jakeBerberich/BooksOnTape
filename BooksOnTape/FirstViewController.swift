@@ -9,17 +9,34 @@
 import UIKit
 
 class FirstViewController: UIViewController {
+    
+    var booksArray = [Books]()
+    var authorsArray = [Authors] ()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+       getJson()
+        print(authorsArray)
     }
+  
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+    func getJson() {
+        
+        let path = Bundle.main.path(forResource: "authors", ofType: "json")
+        let url = URL(fileURLWithPath: path!)
+        print(url)
+        // --------- decode json
+        do {
+            let data = try Data(contentsOf: url)
+            print(data)
+            self.authorsArray = try JSONDecoder().decode([Authors].self, from: data)
+            
+        }
+        catch{ print(error.localizedDescription)
+        }
+        // ----------end decode json
+    }  // end get Json
+    
+    
 }
 

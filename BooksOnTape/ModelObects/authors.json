@@ -1,0 +1,692 @@
+[
+ {
+   "AuthorID": 10,
+   "First": "David ",
+   "Last": "Baldacci",
+   "Rating": 5,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/b/david-baldacci/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 20,
+   "First": "Ted",
+   "Last": "Bell",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/b/ted-bell/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 30,
+   "First": "Steve",
+   "Last": "Berry",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/b/steve-berry/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 40,
+   "First": "Larry",
+   "Last": "Bond",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/b/larry-bond/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 50,
+   "First": "Andrew",
+   "Last": "Britton",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": true,
+   "Link": "https://www.fantasticfiction.com/b/andrew-britton/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 60,
+   "First": "Dan",
+   "Last": "Brown",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/b/dan-brown/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 70,
+   "First": "Christopher",
+   "Last": "Buckley",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/b/christopher-buckley/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 80,
+   "First": "Lee",
+   "Last": "Child",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/c/lee-child/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 90,
+   "First": "Tom ",
+   "Last": "Clancey",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": true,
+   "Link": "https://www.fantasticfiction.com/c/tom-clancy/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 100,
+   "First": "Harlan",
+   "Last": "Coben",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/c/harlan-coben/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 110,
+   "First": "Ben",
+   "Last": "Coes",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/c/ben-coes/last-refuge.htm",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 120,
+   "First": "Robert",
+   "Last": "Crais",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/c/robert-crais/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 130,
+   "First": "Michael",
+   "Last": "Crichton",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/c/michael-crichton/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 140,
+   "First": "Clive",
+   "Last": "Cussler",
+   "Rating": 4,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/c/clive-cussler/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 150,
+   "First": "Nelson",
+   "Last": "DeMille",
+   "Rating": 5,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/d/nelson-demille/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 160,
+   "First": "Jose",
+   "Last": "Dos Santos",
+   "Rating": 2,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/d/jose-rodrigues-dos-santos/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 170,
+   "First": "Sam ",
+   "Last": "Eastland",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/e/sam-eastland/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 180,
+   "First": "Joseph",
+   "Last": "Finder",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/f/joseph-finder/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 190,
+   "First": "Vince",
+   "Last": "Flynn",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": true,
+   "Link": "https://www.fantasticfiction.com/f/vince-flynn/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 200,
+   "First": "Ken",
+   "Last": "Follett",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/f/ken-follett/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 210,
+   "First": "Alan",
+   "Last": "Folsom",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/f/allan-folsom/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 220,
+   "First": "Frederick",
+   "Last": "Forsyth",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/f/frederick-forsyth/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 230,
+   "First": "Felix",
+   "Last": "Francis",
+   "Rating": 4,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/f/felix-francis/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 240,
+   "First": "Dick",
+   "Last": "Francis",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/f/dick-francis/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 250,
+   "First": "Douglas",
+   "Last": "Freeman",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "Not found",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 260,
+   "First": "Dalton",
+   "Last": "Fury",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/f/dalton-fury/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 270,
+   "First": "Tim",
+   "Last": "Green",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/g/tim-green/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 280,
+   "First": "WEB ",
+   "Last": "Griffin",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": true,
+   "Link": "https://www.fantasticfiction.com/g/w-e-b-griffin/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 290,
+   "First": "John",
+   "Last": "Grisham",
+   "Rating": 5,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/g/john-grisham/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 300,
+   "First": "SC ",
+   "Last": "Gwynne",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "http://www.scgwynne.com/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 310,
+   "First": "Brian",
+   "Last": "Haig",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 320,
+   "First": "Ernest",
+   "Last": "Hemingway",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/h/ernest-hemingway/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 330,
+   "First": "Jack",
+   "Last": "Higgins",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": true,
+   "Link": "https://www.fantasticfiction.com/h/jack-higgins/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 340,
+   "First": "Tami",
+   "Last": "Hoag",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/h/tami-hoag/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 350,
+   "First": "Stephen",
+   "Last": "Hunter",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/h/stephen-hunter/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 360,
+   "First": "Gregg",
+   "Last": "Hurwitz",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/h/gregg-hurwitz/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 370,
+   "First": "David ",
+   "Last": "Ignatius",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/i/david-ignatius/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 380,
+   "First": "Greg ",
+   "Last": "Iles",
+   "Rating": 5,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/i/greg-iles/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 390,
+   "First": "Paul",
+   "Last": "Johnson",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "http://pauljohnsonarchives.org/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 400,
+   "First": "Jonathan",
+   "Last": "Jordan",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.goodreads.com/author/show/505415.Jonathan_W_Jordan",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 410,
+   "First": "Chris ",
+   "Last": "Kyle",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.biography.com/people/chris-kyle",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 420,
+   "First": "Erik ",
+   "Last": "Larson",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "http://eriklarsonbooks.com/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 430,
+   "First": "Ray",
+   "Last": "L'Heureux",
+   "Rating": 2,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.goodreads.com/book/show/18404127-inside-marine-one",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 440,
+   "First": "Marcus",
+   "Last": "Luttrell",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "http://marcusluttrell.com/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 450,
+   "First": "Charles",
+   "Last": "McCarry",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/m/charles-mccarry/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 460,
+   "First": "Brad",
+   "Last": "Meltzer",
+   "Rating": 5,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/m/brad-meltzer/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 470,
+   "First": "Robert",
+   "Last": "O'Neill",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "http://www.robertjoneill.com/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 480,
+   "First": "Bill",
+   "Last": "O'Reilly",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/o/bill-oreilly/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 490,
+   "First": "Brian",
+   "Last": "Panowich",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/p/brian-panowich/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 500,
+   "First": "James",
+   "Last": "Patterson",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/p/james-patterson/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 510,
+   "First": "Ralph",
+   "Last": "Peters",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://en.wikipedia.org/wiki/Ralph_Peters",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 520,
+   "First": "Stan",
+   "Last": "Pottinger",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/p/stanley-pottinger/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 530,
+   "First": "Christopher",
+   "Last": "Reich",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/r/christopher-reich/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 540,
+   "First": "David ",
+   "Last": "Robbins",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/r/david-l-robbins/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 550,
+   "First": "Patrick",
+   "Last": "Robinson",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/r/patrick-robinson/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 560,
+   "First": "Joel",
+   "Last": "Rosenberg",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/r/joel-c-rosenberg/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 570,
+   "First": "Chris",
+   "Last": "Ryan",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/r/chris-ryan/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 580,
+   "First": "Michael",
+   "Last": "Shaara",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": true,
+   "Link": "https://www.fantasticfiction.com/s/michael-shaara/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 590,
+   "First": "Jeff",
+   "Last": "Shaara",
+   "Rating": 5,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/s/jeff-shaara/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 600,
+   "First": "Daniel",
+   "Last": "Silva",
+   "Rating": 5,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/s/daniel-silva/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 610,
+   "First": "Wilbur",
+   "Last": "Smith",
+   "Rating": 5,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/s/wilbur-smith/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 620,
+   "First": "Les",
+   "Last": "Staniford",
+   "Rating": 4,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/s/les-standiford/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 630,
+   "First": "James",
+   "Last": "Tabor",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/t/james-tabor/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 640,
+   "First": "Brad",
+   "Last": "Taylor",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/t/brad-taylor/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 650,
+   "First": "Keith",
+   "Last": "Thomson",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/t/keith-thomson/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 660,
+   "First": "Brad",
+   "Last": "Thor",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/t/brad-thor/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 670,
+   "First": "Gene",
+   "Last": "Wilder",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": true,
+   "Link": "https://www.fantasticfiction.com/w/gene-wilder/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 680,
+   "First": "Tom ",
+   "Last": "Young",
+   "Rating": 5,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/y/thomas-w-young/",
+   "AuthorPix": "c:/authorPix"
+ },
+ {
+   "AuthorID": 690,
+   "First": "Karen",
+   "Last": "Cleveland",
+   "Rating": 3,
+   "Recent Books": "",
+   "Deceased": false,
+   "Link": "https://www.fantasticfiction.com/c/karen-cleveland/",
+   "AuthorPix": "c:/authorPix"
+ }
+]

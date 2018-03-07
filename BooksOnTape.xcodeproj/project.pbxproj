@@ -13,6 +13,11 @@
 		0039F403204F23070080EDEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0039F401204F23070080EDEA /* Main.storyboard */; };
 		0039F405204F23070080EDEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0039F404204F23070080EDEA /* Assets.xcassets */; };
 		0039F408204F23070080EDEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0039F406204F23070080EDEA /* LaunchScreen.storyboard */; };
+		0039F413204F23A40080EDEA /* books.json in Resources */ = {isa = PBXBuildFile; fileRef = 0039F411204F23A30080EDEA /* books.json */; };
+		0039F415204F24B90080EDEA /* AuthorStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0039F414204F24B90080EDEA /* AuthorStructures.swift */; };
+		0039F417204F2AE50080EDEA /* BookStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0039F416204F2AE50080EDEA /* BookStructure.swift */; };
+		005615AB204F472700128C53 /* RemoteFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005615AA204F472700128C53 /* RemoteFunctions.swift */; };
+		005615AD204F4B9B00128C53 /* authors.json in Resources */ = {isa = PBXBuildFile; fileRef = 005615AC204F4B9B00128C53 /* authors.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		0039F404204F23070080EDEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0039F407204F23070080EDEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0039F409204F23070080EDEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0039F411204F23A30080EDEA /* books.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = books.json; sourceTree = "<group>"; };
+		0039F414204F24B90080EDEA /* AuthorStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorStructures.swift; sourceTree = "<group>"; };
+		0039F416204F2AE50080EDEA /* BookStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStructure.swift; sourceTree = "<group>"; };
+		005615AA204F472700128C53 /* RemoteFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFunctions.swift; sourceTree = "<group>"; };
+		005615AC204F4B9B00128C53 /* authors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = authors.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,7 @@
 		0039F3FA204F23070080EDEA /* BooksOnTape */ = {
 			isa = PBXGroup;
 			children = (
+				0039F40F204F237D0080EDEA /* ModelObects */,
 				0039F3FB204F23070080EDEA /* AppDelegate.swift */,
 				0039F3FD204F23070080EDEA /* FirstViewController.swift */,
 				0039F3FF204F23070080EDEA /* SecondViewController.swift */,
@@ -65,6 +76,18 @@
 				0039F409204F23070080EDEA /* Info.plist */,
 			);
 			path = BooksOnTape;
+			sourceTree = "<group>";
+		};
+		0039F40F204F237D0080EDEA /* ModelObects */ = {
+			isa = PBXGroup;
+			children = (
+				005615AC204F4B9B00128C53 /* authors.json */,
+				0039F411204F23A30080EDEA /* books.json */,
+				0039F414204F24B90080EDEA /* AuthorStructures.swift */,
+				0039F416204F2AE50080EDEA /* BookStructure.swift */,
+				005615AA204F472700128C53 /* RemoteFunctions.swift */,
+			);
+			path = ModelObects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +149,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0039F413204F23A40080EDEA /* books.json in Resources */,
+				005615AD204F4B9B00128C53 /* authors.json in Resources */,
 				0039F408204F23070080EDEA /* LaunchScreen.storyboard in Resources */,
 				0039F405204F23070080EDEA /* Assets.xcassets in Resources */,
 				0039F403204F23070080EDEA /* Main.storyboard in Resources */,
@@ -142,6 +167,9 @@
 				0039F400204F23070080EDEA /* SecondViewController.swift in Sources */,
 				0039F3FC204F23070080EDEA /* AppDelegate.swift in Sources */,
 				0039F3FE204F23070080EDEA /* FirstViewController.swift in Sources */,
+				0039F415204F24B90080EDEA /* AuthorStructures.swift in Sources */,
+				0039F417204F2AE50080EDEA /* BookStructure.swift in Sources */,
+				005615AB204F472700128C53 /* RemoteFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
