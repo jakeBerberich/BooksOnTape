@@ -12,8 +12,7 @@ class SecondViewController: UIViewController {
 
     @IBOutlet weak var urlName: UITextField!
     @IBOutlet weak var imageView: UIImageView!
-  var urlKey = "http://motoburg.com/images/datsun-280z-01.jpg"
-    
+  var urlKey = "https://images-na.ssl-images-amazon.com/images/I/41xmArru3rL.SX316.SY316.jpg"
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
