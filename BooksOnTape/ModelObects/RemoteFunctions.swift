@@ -15,6 +15,33 @@ class RemoteFunctions {
     var jsonEncoder = JSONEncoder()
     var jsonDecoder = JSONDecoder()
     
+    enum RemoteRecords {
+        static let booksDB = "Books"
+        static let authorsDB = "Authors"
+    }
+    
+    enum RemoteAuthor {
+        static let authorID = "authorID"
+        static let authorPixAddress = "authorPixAddress"
+        static let deceased = "deceased"
+        static let first = "first"
+        static let last = "last"
+        static let link = "link"
+        static let rating = "rating"
+        static let recentBooks = "recentBooks"
+    }
+    
+    enum RemoteBook {
+         static let authorFirst = "authorFirst"
+        static let authorLast = "authorLast"
+        static let format = "format"
+        static let pixURL = "pixURL"
+        static let rating = "rating"
+        static let status = "status"
+        static let title = "title"
+    }
+    
+    
   //------------------------------------------------------------------------------------
     func returnAuthorsJson() ->  ([Authors]) {
         

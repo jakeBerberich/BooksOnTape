@@ -15,7 +15,7 @@ struct Authors: Codable {
     let last: String
     let rating: Int
     let recentBooks: String
-    let deceased : Bool
+    let deceased : String
     let link: String
     let authorPixAddress: String
   
@@ -38,7 +38,7 @@ init() {
     last = blanks
     rating = 0
     recentBooks = blanks
-    deceased = false
+    deceased = blanks
     link = blanks
     authorPixAddress = blanks
 }
