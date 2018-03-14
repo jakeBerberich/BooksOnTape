@@ -22,7 +22,7 @@ class FirstViewController: UIViewController {
     }
   
     @IBAction func loadAuthorsToCloud(_ sender: Any) {
-        //loadBooks()
+       // loadAuthors()
    
     }
     
@@ -76,14 +76,14 @@ class FirstViewController: UIViewController {
 
     func getJson() {
         
-        let path = Bundle.main.path(forResource: "books", ofType: "json")
+        let path = Bundle.main.path(forResource: "authors", ofType: "json")
         let url = URL(fileURLWithPath: path!)
         print(url)
         // --------- decode json
         do {
             let data = try Data(contentsOf: url)
             print(data)
-            self.booksArray = try JSONDecoder().decode([Books].self, from: data)
+            self.authorsArray = try JSONDecoder().decode([Authors].self, from: data)
             
         }
         catch{ print(error.localizedDescription)

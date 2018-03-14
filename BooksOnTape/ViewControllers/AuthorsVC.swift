@@ -7,40 +7,44 @@
 //
 import Foundation
 import UIKit
+import CloudKit
 
 class AuthorsVC: UITableViewController {
     
   
     var authorsArray = [Authors]()
-  
-    var jsonEncoder = JSONEncoder()
-    var jsonDecoder = JSONDecoder()
    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        returnAllAuthorsJson()
-       tableView.reloadData()
         
-    }
-    
-    
-    func returnAllAuthorsJson()  ->([Authors])  {
-        let path = Bundle.main.path(forResource: "authors", ofType: "json")
-        let url2 = URL(fileURLWithPath: path!)
-        
-        do {
-            let data = try Data(contentsOf: url2)
-            self.authorsArray = try JSONDecoder().decode([Authors].self, from: data)
-            authorsArray.sort(by: {($0.rating > $1.rating) && ($0.last <  $1.last) })
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: RemoteFunctions.RemoteRecords.authorsDB, predicate: predicate)
+        ConnectionsDB.share.privateDB.perform(query, inZoneWith: nil  ) {
+            records, error in
+            if error != nil {
+                print(error!.localizedDescription)
+                } else {
+                guard let record = records else {return}
+                 
+                for record in records! {
+                    print(record.object(forKey: "link"))
                 }
-        catch   { print("error")
+                OperationQueue.main.addOperation {
+                    print(records?.count)
+                }
+            }
         }
+       
         
-     
-        return (authorsArray)
     }
+    
+    
+    
+    
+    
+    
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let showBooks  = UIContextualAction(style: .normal, title: "Show Books")  { (action, view, nil) in
             print("ShowBooks")

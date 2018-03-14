@@ -7,40 +7,43 @@
 //
 
 import UIKit
+import CloudKit
 
 class BooksVC: UITableViewController {
 
 
     var booksArray = [Books]()
     
-    var jsonEncoder = JSONEncoder()
-    var jsonDecoder = JSONDecoder()
     
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        returnAllBooksJson()
-        tableView.reloadData()
         
+          super.viewDidLoad()
+        
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: RemoteFunctions.RemoteRecords.booksDB, predicate: predicate)
+        ConnectionsDB.share.privateDB.perform(query, inZoneWith: nil  ) {
+            records, error in
+            if error != nil {
+                print(error?.localizedDescription)
+            } else {
+                print(records?.count)
+                for record in records! {
+                    print(record.object(forKey: "title"))
+                }
+                
+                OperationQueue.main.addOperation {
+                    print(records?.count)
+                
+            }
+            }
+       
+        }
     }
     
     
-    func returnAllBooksJson()  ->([Books])  {
-        let path = Bundle.main.path(forResource: "books", ofType: "json")
-        let url2 = URL(fileURLWithPath: path!)
-        
-        do {
-            let data = try Data(contentsOf: url2)
-            self.booksArray = try JSONDecoder().decode([Books].self, from: data)
-            booksArray.sort(by: {$0.authorLast < $1.authorLast  })
-        }
-        catch   { print(error.localizedDescription)
-        }
-        
-        
-        return (booksArray)
-    }
+ 
     
     
     // MARK: - Table view data source
