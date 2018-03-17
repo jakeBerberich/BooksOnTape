@@ -10,15 +10,15 @@ import Foundation
  
 
 struct Books: Codable {
-    let authorFirst: String
-    let authorLast: String
-    let title: String
-    let series: String
-    let fullName: String
-    let status: String
-    let pixURL: String
-    let format: String
-    let rating: Int
+    var authorFirst: String
+    var authorLast: String
+    var title: String
+    var series: String
+    var fullName: String
+    var status: String
+    var pixURL: String
+    var format: String
+    var rating: Int
     
     
     private enum CodingKeys: String, CodingKey {
@@ -44,4 +44,6 @@ struct Books: Codable {
         format = blanks
         rating = 0
     }
+    
+    
 }

@@ -34,11 +34,14 @@ class RemoteFunctions {
     enum RemoteBook {
          static let authorFirst = "authorFirst"
         static let authorLast = "authorLast"
-        static let format = "format"
-        static let pixURL = "pixURL"
-        static let rating = "rating"
-        static let status = "status"
         static let title = "title"
+        static let series = "series"
+        static let fullName = "fullName"
+        static let status = "status"
+        static let pixURL = "pixURL"
+        static let format = "format"
+        static let rating = "rating"
+         
     }
     
     

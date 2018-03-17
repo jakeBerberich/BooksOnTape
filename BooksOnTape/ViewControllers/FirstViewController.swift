@@ -10,6 +10,7 @@ import UIKit
 import CloudKit
 
 class FirstViewController: UIViewController {
+  
     
     var booksArray = [Books]()
     var authorsArray = [Authors] ()
@@ -17,16 +18,17 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        getJson()
-    print(booksArray)
+    // print(booksArray)
         
     }
   
     @IBAction func loadAuthorsToCloud(_ sender: Any) {
-       // loadAuthors()
+       loadBooks()
    
     }
     
     func loadBooks() {
+       
         for books in booksArray {
             let recordBooks = CKRecord(recordType: RemoteFunctions.RemoteRecords.booksDB)
             
@@ -38,7 +40,10 @@ class FirstViewController: UIViewController {
             recordBooks[RemoteFunctions.RemoteBook.rating] = books.rating as NSNumber
             recordBooks[RemoteFunctions.RemoteBook.status] = books.status as NSString
             recordBooks[RemoteFunctions.RemoteBook.title] = books.title as NSString
+            recordBooks[RemoteFunctions.RemoteBook.series] = books.series as NSString
+            recordBooks[RemoteFunctions.RemoteBook.fullName] = books.fullName as NSString
             print(recordBooks)
+             
             
             ConnectionsDB.share.privateDB.save(recordBooks) {
                 record, error in
@@ -76,14 +81,14 @@ class FirstViewController: UIViewController {
 
     func getJson() {
         
-        let path = Bundle.main.path(forResource: "authors", ofType: "json")
+        let path = Bundle.main.path(forResource: "books", ofType: "json")
         let url = URL(fileURLWithPath: path!)
         print(url)
         // --------- decode json
         do {
             let data = try Data(contentsOf: url)
             print(data)
-            self.authorsArray = try JSONDecoder().decode([Authors].self, from: data)
+            self.booksArray = try JSONDecoder().decode([Books].self, from: data)
             
         }
         catch{ print(error.localizedDescription)
