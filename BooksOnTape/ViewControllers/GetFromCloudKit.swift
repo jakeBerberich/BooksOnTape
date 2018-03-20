@@ -31,44 +31,55 @@ class GetFromCloudKit: UIViewController {
     
     func getData() {
         let predicate = NSPredicate(value: true)
-        let query = CKQuery(recordType: RemoteFunctions.RemoteRecords.booksDB, predicate: predicate)
+        let query = CKQuery(recordType: RemoteFunctions.RemoteRecords.authorsDB, predicate: predicate)
+        let operation = CKQueryOperation(query: query)
         let cloudContainer = CKContainer.default()
         let privateDatabase = cloudContainer.privateCloudDatabase
-        let operation = CKQueryOperation(query: query)
         
         operation.queuePriority = .veryHigh
-        operation.resultsLimit = 20
+        operation.resultsLimit = 25
         
         operation.recordFetchedBlock = { (record: CKRecord) in
             self.allRecords.append(record)
              print(record)
         }
-        operation.queryCompletionBlock = {[weak self] (cursor: CKQueryCursor?, error: NSError?) in
-            // There is another batch of records to be fetched
-            print("completion block called with \(String(describing: cursor))")
-          
-            if let cursor = cursor  {
-                let newOperation = CKQueryOperation(cursor: cursor)
-                newOperation.recordFetchedBlock = operation.recordFetchedBlock
-                newOperation.queryCompletionBlock = operation.queryCompletionBlock
-               newOperation.resultsLimit = 10
-                privateDatabase.add(newOperation)
-                print("more records")
+        
+        operation.queryCompletionBlock =  {
+            cursor, error in
+            if error !=  nil {
+                print(error!.localizedDescription)
+                } else {
+                if cursor != nil {
+                    print("total First records: \(self.allRecords.count)")
+                    self.queryServer(cursor!)
+                }
             }
-                // There was an error
-            else if let error = error {
-                print("Error:", error)
+        }
+        privateDatabase.add(operation)
+    }
+    
+    
+    func queryServer(_ cursor: CKQueryCursor) {
+        let operation = CKQueryOperation(cursor: cursor)
+        let cloudContainer = CKContainer.default()
+        let privateDatabase = cloudContainer.privateCloudDatabase
+        operation.resultsLimit = 25
+        operation.recordFetchedBlock = { (record: CKRecord) in
+            self.allRecords.append(record)
+           // print(record)
+        }
+        operation.queryCompletionBlock = {
+            cursor, error in
+            if error !=  nil {
+                print(error!.localizedDescription)
+            } else {
+                if cursor != nil {
+                    print("total records: \(self.allRecords.count)")
+                    self.queryServer(cursor!)
+                }
             }
-                
-                // No error and no cursor means the operation was successful
-            else {
-                print("Finished with records:")
-            }
-            } as? (CKQueryCursor?, Error?) -> Void
-            
-//
-    privateDatabase.add(operation)
+        }
+        privateDatabase.add(operation)
         
     }
-
 }

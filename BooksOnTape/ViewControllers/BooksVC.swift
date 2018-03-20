@@ -37,8 +37,7 @@ class BooksVC: UITableViewController {
             (record: CKRecord) in
             self.allRecords.append(record)
         }
-        queryOperation.queuePriority = .veryHigh
-        queryOperation.resultsLimit = 390
+         
         
         // ----
         queryOperation.queryCompletionBlock =  { (cursor, error) -> Void in
@@ -67,28 +66,28 @@ class BooksVC: UITableViewController {
         
  
         // ------
-        queryOperation.recordFetchedBlock = {
-            record in
-            print(record.object(forKey: "title"))
-           
-            self.recordArray.append(record)
-            print(self.recordArray.count)
-            
-            self.booksRecord.authorFirst  = ((record.object(forKey: "authorFirst" ) as! NSString) as String)
-            self.booksRecord.authorLast  = ((record.object(forKey:   "authorLast") as! NSString) as String)
-            self.booksRecord.title  = ((record.object(forKey:   "title") as! NSString) as String)
-            
-            // self.booksRecord.series  = ((record.object(forKey: "series") as! NSString) as String)
-            //  self.booksRecord.fullName  = ((record.object(forKey: "fullName") as! NSString) as String)
-            self.booksRecord.status  = ((record.object(forKey: "status") as! NSString) as String)
-            
-            self.booksRecord.pixURL  = ((record.object(forKey: "pixURL") as! NSString) as String)
-            self.booksRecord.format  = ((record.object(forKey: "format") as! NSString) as String)
-            self.booksRecord.rating  = ((record.object(forKey: "rating") as! Int) as Int)
-            //
-            self.booksArray.append(self.booksRecord)
-            print(self.booksRecord)
-        }
+//        queryOperation.recordFetchedBlock = {
+//            record in
+//            print(record.object(forKey: "title"))
+//
+//            self.recordArray.append(record)
+//            print(self.recordArray.count)
+//
+//            self.booksRecord.authorFirst  = ((record.object(forKey: "authorFirst" ) as! NSString) as String)
+//            self.booksRecord.authorLast  = ((record.object(forKey:   "authorLast") as! NSString) as String)
+//            self.booksRecord.title  = ((record.object(forKey:   "title") as! NSString) as String)
+//
+//            // self.booksRecord.series  = ((record.object(forKey: "series") as! NSString) as String)
+//            //  self.booksRecord.fullName  = ((record.object(forKey: "fullName") as! NSString) as String)
+//            self.booksRecord.status  = ((record.object(forKey: "status") as! NSString) as String)
+//
+//            self.booksRecord.pixURL  = ((record.object(forKey: "pixURL") as! NSString) as String)
+//            self.booksRecord.format  = ((record.object(forKey: "format") as! NSString) as String)
+//            self.booksRecord.rating  = ((record.object(forKey: "rating") as! Int) as Int)
+//            //
+//            self.booksArray.append(self.booksRecord)
+//            print(self.booksRecord)
+//        }
         
         privateDatabase.add(queryOperation)
         print(self.booksArray)
