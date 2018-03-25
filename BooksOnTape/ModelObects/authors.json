@@ -670,6 +670,16 @@
    "AuthorPix": "c:/authorPix"
  },
  {
+ "AuthorID": 675,
+ "First": "Randy Wayne",
+ "Last": "White",
+ "Rating": 5,
+ "Recent Books": "*TBD",
+ "Deceased": "No",
+ "Link": "https://www.fantasticfiction.com/w/randy-white/",
+ "AuthorPix": "c:/authorPix"
+ },
+ {
    "AuthorID": 680,
    "First": "Tom ",
    "Last": "Young",

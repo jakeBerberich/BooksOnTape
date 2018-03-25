@@ -18,7 +18,6 @@
 		005615AB204F472700128C53 /* RemoteFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005615AA204F472700128C53 /* RemoteFunctions.swift */; };
 		005615AD204F4B9B00128C53 /* authors.json in Resources */ = {isa = PBXBuildFile; fileRef = 005615AC204F4B9B00128C53 /* authors.json */; };
 		008C73AF205E847B00989377 /* GetFromCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008C73AE205E847B00989377 /* GetFromCloudKit.swift */; };
-		008C73B12060585C00989377 /* V2GetFromCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008C73B02060585C00989377 /* V2GetFromCloud.swift */; };
 		00ADB37520540CBE00EA20F1 /* AuthorsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ADB37420540CBE00EA20F1 /* AuthorsVC.swift */; };
 		00ADB37720547F3E00EA20F1 /* BooksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ADB37620547F3E00EA20F1 /* BooksVC.swift */; };
 		00ADB379205484C000EA20F1 /* books.json in Resources */ = {isa = PBXBuildFile; fileRef = 00ADB378205484C000EA20F1 /* books.json */; };
@@ -40,7 +39,6 @@
 		005615AA204F472700128C53 /* RemoteFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFunctions.swift; sourceTree = "<group>"; };
 		005615AC204F4B9B00128C53 /* authors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = authors.json; sourceTree = "<group>"; };
 		008C73AE205E847B00989377 /* GetFromCloudKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFromCloudKit.swift; sourceTree = "<group>"; };
-		008C73B02060585C00989377 /* V2GetFromCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V2GetFromCloud.swift; sourceTree = "<group>"; };
 		00ADB37420540CBE00EA20F1 /* AuthorsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsVC.swift; sourceTree = "<group>"; };
 		00ADB37620547F3E00EA20F1 /* BooksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksVC.swift; sourceTree = "<group>"; };
 		00ADB378205484C000EA20F1 /* books.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = books.json; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 				0039F3FD204F23070080EDEA /* FirstViewController.swift */,
 				00ADB37420540CBE00EA20F1 /* AuthorsVC.swift */,
 				00ADB37620547F3E00EA20F1 /* BooksVC.swift */,
-				008C73B02060585C00989377 /* V2GetFromCloud.swift */,
 				008C73AE205E847B00989377 /* GetFromCloudKit.swift */,
 			);
 			path = ViewControllers;
@@ -209,7 +206,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				008C73B12060585C00989377 /* V2GetFromCloud.swift in Sources */,
 				0039F400204F23070080EDEA /* SecondViewController.swift in Sources */,
 				008C73AF205E847B00989377 /* GetFromCloudKit.swift in Sources */,
 				0039F3FC204F23070080EDEA /* AppDelegate.swift in Sources */,

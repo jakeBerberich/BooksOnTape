@@ -32,12 +32,14 @@ class GetFromCloudKit: UIViewController {
     func getData() {
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: RemoteFunctions.RemoteRecords.authorsDB, predicate: predicate)
+        let sort = NSSortDescriptor(key: "last", ascending: true)
+        query.sortDescriptors = [sort]
         let operation = CKQueryOperation(query: query)
         let cloudContainer = CKContainer.default()
         let privateDatabase = cloudContainer.privateCloudDatabase
         
         operation.queuePriority = .veryHigh
-        operation.resultsLimit = 25
+        
         
         operation.recordFetchedBlock = { (record: CKRecord) in
             self.allRecords.append(record)
@@ -63,7 +65,7 @@ class GetFromCloudKit: UIViewController {
         let operation = CKQueryOperation(cursor: cursor)
         let cloudContainer = CKContainer.default()
         let privateDatabase = cloudContainer.privateCloudDatabase
-        operation.resultsLimit = 25
+     
         operation.recordFetchedBlock = { (record: CKRecord) in
             self.allRecords.append(record)
            // print(record)

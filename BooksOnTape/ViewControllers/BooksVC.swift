@@ -16,8 +16,11 @@ class BooksVC: UITableViewController {
     var booksRecord =  Books()
     var recordArray = [CKRecord]()
     var allRecords: [CKRecord] = []
-  
+  var authorLast = "Child"
     
+    @IBAction func load(_ sender: Any) {
+    self.tableView.reloadData()
+    }
     
     
     override func viewDidLoad() {
@@ -27,7 +30,7 @@ class BooksVC: UITableViewController {
         let cloudContainer = CKContainer.default()
         let privateDatabase = cloudContainer.privateCloudDatabase
         
-        let predicate = NSPredicate(value: true)
+        let predicate = NSPredicate(format: "authorLast == %@",  authorLast)
         let query = CKQuery(recordType: RemoteFunctions.RemoteRecords.booksDB, predicate: predicate)
         let sort = NSSortDescriptor(key: "title" , ascending: true)
         query.sortDescriptors = [sort]
@@ -39,55 +42,29 @@ class BooksVC: UITableViewController {
         }
          
         
-        // ----
-        queryOperation.queryCompletionBlock =  { (cursor, error) -> Void in
+     
+        queryOperation.recordFetchedBlock = {
+            record in
+            print(record.object(forKey: "title"))
 
-        if error != nil {
-            print("Failed to get data")
-            return
+            self.recordArray.append(record)
+            print(self.recordArray.count)
+
+            self.booksRecord.authorFirst  = ((record.object(forKey: "authorFirst" ) as! NSString) as String)
+            self.booksRecord.authorLast  = ((record.object(forKey:   "authorLast") as! NSString) as String)
+            self.booksRecord.title  = ((record.object(forKey:   "title") as! NSString) as String)
+
+            // self.booksRecord.series  = ((record.object(forKey: "series") as! NSString) as String)
+            //  self.booksRecord.fullName  = ((record.object(forKey: "fullName") as! NSString) as String)
+            self.booksRecord.status  = ((record.object(forKey: "status") as! NSString) as String)
+
+            self.booksRecord.pixURL  = ((record.object(forKey: "pixURL") as! NSString) as String)
+            self.booksRecord.format  = ((record.object(forKey: "format") as! NSString) as String)
+            self.booksRecord.rating  = ((record.object(forKey: "rating") as! Int) as Int)
+            //
+            self.booksArray.append(self.booksRecord)
+            print(self.booksRecord)
         }
-        
-        if let cursor = cursor {
-            let newQueryOperation = CKQueryOperation(cursor: cursor)
-            newQueryOperation.cursor = cursor
-            newQueryOperation.recordFetchedBlock = queryOperation.recordFetchedBlock
-            newQueryOperation.completionBlock = queryOperation.completionBlock
-            newQueryOperation.resultsLimit =  50
-            newQueryOperation.queryCompletionBlock = queryOperation.queryCompletionBlock
-
-       
-
-            privateDatabase.add(newQueryOperation)
-
-            }
-        }
-        
-        
-        
- 
-        // ------
-//        queryOperation.recordFetchedBlock = {
-//            record in
-//            print(record.object(forKey: "title"))
-//
-//            self.recordArray.append(record)
-//            print(self.recordArray.count)
-//
-//            self.booksRecord.authorFirst  = ((record.object(forKey: "authorFirst" ) as! NSString) as String)
-//            self.booksRecord.authorLast  = ((record.object(forKey:   "authorLast") as! NSString) as String)
-//            self.booksRecord.title  = ((record.object(forKey:   "title") as! NSString) as String)
-//
-//            // self.booksRecord.series  = ((record.object(forKey: "series") as! NSString) as String)
-//            //  self.booksRecord.fullName  = ((record.object(forKey: "fullName") as! NSString) as String)
-//            self.booksRecord.status  = ((record.object(forKey: "status") as! NSString) as String)
-//
-//            self.booksRecord.pixURL  = ((record.object(forKey: "pixURL") as! NSString) as String)
-//            self.booksRecord.format  = ((record.object(forKey: "format") as! NSString) as String)
-//            self.booksRecord.rating  = ((record.object(forKey: "rating") as! Int) as Int)
-//            //
-//            self.booksArray.append(self.booksRecord)
-//            print(self.booksRecord)
-//        }
         
         privateDatabase.add(queryOperation)
         print(self.booksArray)

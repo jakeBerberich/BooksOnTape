@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="poe-Rz-4cU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -193,16 +193,21 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Authors" id="JD1-hi-Dib">
                         <barButtonItem key="backBarButtonItem" title="back" id="9iK-DP-1f0"/>
+                        <barButtonItem key="leftBarButtonItem" title="Load" id="AsI-ZF-OnV">
+                            <connections>
+                                <action selector="loadSubfile:" destination="EHw-BI-mZd" id="wMe-2y-4Kg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zpz-Ab-a7b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="585" y="1059"/>
         </scene>
-        <!--Get From Cloud-->
+        <!--Get From Cloud Kit-->
         <scene sceneID="aHi-Gb-nNh">
             <objects>
-                <viewController id="poe-Rz-4cU" customClass="V2GetFromCloud" customModule="BooksOnTape" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="poe-Rz-4cU" customClass="GetFromCloudKit" customModule="BooksOnTape" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0SU-BK-kvj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -212,7 +217,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="get data"/>
                                 <connections>
-                                    <action selector="getCloudData:" destination="poe-Rz-4cU" eventType="touchUpInside" id="J0O-k3-Nc4"/>
+                                    <action selector="CloudKitData:" destination="poe-Rz-4cU" eventType="touchUpInside" id="Q2p-ag-A64"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSr-oD-lrr">
@@ -220,7 +225,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="count"/>
                                 <connections>
-                                    <action selector="count:" destination="poe-Rz-4cU" eventType="touchUpInside" id="Dka-HY-Tqg"/>
+                                    <action selector="displayCount:" destination="poe-Rz-4cU" eventType="touchUpInside" id="kae-p0-0W3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -271,7 +276,13 @@
                             <outlet property="delegate" destination="zg1-S9-dcF" id="3b8-r0-ymX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="6PD-EV-7d7"/>
+                    <navigationItem key="navigationItem" id="6PD-EV-7d7">
+                        <barButtonItem key="leftBarButtonItem" title="Load" id="IHh-bZ-Lu2">
+                            <connections>
+                                <action selector="load:" destination="zg1-S9-dcF" id="F17-w2-JyX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zjO-Pf-Ugd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

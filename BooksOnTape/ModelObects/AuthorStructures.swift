@@ -10,14 +10,14 @@ import Foundation
 var blanks = " "
 
 struct Authors: Codable {
-    let authorID: Int
-    let first: String
-    let last: String
-    let rating: Int
-    let recentBooks: String
-    let deceased : String
-    let link: String
-    let authorPixAddress: String
+    var authorID: Int
+    var first: String
+    var last: String
+    var rating: Int
+    var  recentBooks: String
+    var deceased : String
+    var  link: String
+    var authorPixAddress: String
   
 
 
