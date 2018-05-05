@@ -18,19 +18,19 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        getJson()
-    // print(booksArray)
+     print(booksArray)
         
     }
   
     @IBAction func loadAuthorsToCloud(_ sender: Any) {
-       loadBooks()
+     //  loadBooks()
    
     }
     
     func loadBooks() {
        
         for books in booksArray {
-            let recordBooks = CKRecord(recordType: RemoteFunctions.RemoteRecords.booksDB)
+            let recordBooks = CKRecord(recordType: "Books")
             
             
             recordBooks[RemoteFunctions.RemoteBook.authorFirst] = books.authorFirst as NSString

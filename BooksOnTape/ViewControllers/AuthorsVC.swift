@@ -117,11 +117,20 @@ class AuthorsVC: UITableViewController {
         
         let swipeConfig =  UISwipeActionsConfiguration(actions: [showBooks])
         swipeConfig.performsFirstActionWithFullSwipe = false
+        self.performSegue(withIdentifier: "showBooks", sender: Any?.self)
         return swipeConfig
     }
     
-    
-    
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "showBooks" {
+    print("segue fired")
+        print(authorsArray)
+        let indexPath = self.tableView.indexPathForSelectedRow
+        let destinationVC = segue.destination as! BooksVC
+        destinationVC.firstIn = self.authorsArray[indexPath!.row].first
+        destinationVC.lastIn = self.authorsArray[indexPath!.row].last
+    }
+    }
 
     // MARK: - Table view data source
 

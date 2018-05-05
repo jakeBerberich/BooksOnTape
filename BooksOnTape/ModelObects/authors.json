@@ -1,6 +1,6 @@
 [
  {
-   "AuthorID": 10,
+   "AuthorID": 500010,
    "First": "David ",
    "Last": "Baldacci",
    "Rating": 5,
@@ -698,5 +698,25 @@
    "Deceased": "No",
    "Link": "https://www.fantasticfiction.com/c/karen-cleveland/",
    "AuthorPix": "c:/authorPix"
+ },
+ {
+ "AuthorID": 700,
+ "First": "Walter",
+ "Last": "Isaacson",
+ "Rating": 3,
+ "Recent Books": "*TBD",
+ "Deceased": "No",
+ "Link": "https://en.wikipedia.org/wiki/Walter_Isaacson/",
+ "AuthorPix": "c:/authorPix"
+ },
+ {
+ "AuthorID": 710,
+ "First": "Jason",
+ "Last": "Overstreet",
+ "Rating": 3,
+ "Recent Books": "*TBD",
+ "Deceased": "No",
+ "Link": "https://www.fantasticfiction.com/o/jason-overstreet/",
+ "AuthorPix": "c:/authorPix"
  }
-]
+ ]

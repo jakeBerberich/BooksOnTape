@@ -16,61 +16,82 @@ class BooksVC: UITableViewController {
     var booksRecord =  Books()
     var recordArray = [CKRecord]()
     var allRecords: [CKRecord] = []
-  var authorLast = "Child"
+    
+// segue values
+    var firstIn: String?
+    var lastIn: String?
+    
+    
+    
+    public typealias YourFetchCompletionHandler = (_ records: [CKRecord]?, _ cursor: CKQueryCursor?) -> (Void)
     
     @IBAction func load(_ sender: Any) {
     self.tableView.reloadData()
+        if booksArray.count != 0 {
+            print("array already loaded")
+        }
     }
     
     
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        
+    func fetchBooks(_ cursor: CKQueryCursor? = nil) {
+        print("fetch Books:  \(cursor)")
         let cloudContainer = CKContainer.default()
         let privateDatabase = cloudContainer.privateCloudDatabase
-        
-        let predicate = NSPredicate(format: "authorLast == %@",  authorLast)
-        let query = CKQuery(recordType: RemoteFunctions.RemoteRecords.booksDB, predicate: predicate)
-        let sort = NSSortDescriptor(key: "title" , ascending: true)
-        query.sortDescriptors = [sort]
-        let queryOperation = CKQueryOperation (query: query)
-        
-        queryOperation.recordFetchedBlock = {
-            (record: CKRecord) in
-            self.allRecords.append(record)
+        var operation: CKQueryOperation!
+        if let cursor = cursor {
+            operation = CKQueryOperation(cursor: cursor)
+        } else {
+            
+             let predicate =   NSPredicate(value: true)
+//            let predicate = NSPredicate(format: "authorLast = %@", lastIn!)
+            
+            let query = CKQuery(recordType: RemoteFunctions.RemoteRecords.booksDB, predicate: predicate)
+            operation = CKQueryOperation(query: query)
         }
-         
-        
-     
-        queryOperation.recordFetchedBlock = {
-            record in
-            print(record.object(forKey: "title"))
-
-            self.recordArray.append(record)
-            print(self.recordArray.count)
-
+        operation.recordFetchedBlock = {
+            (record) in
+            self.allRecords.append(record)
             self.booksRecord.authorFirst  = ((record.object(forKey: "authorFirst" ) as! NSString) as String)
             self.booksRecord.authorLast  = ((record.object(forKey:   "authorLast") as! NSString) as String)
             self.booksRecord.title  = ((record.object(forKey:   "title") as! NSString) as String)
-
+            
             // self.booksRecord.series  = ((record.object(forKey: "series") as! NSString) as String)
             //  self.booksRecord.fullName  = ((record.object(forKey: "fullName") as! NSString) as String)
             self.booksRecord.status  = ((record.object(forKey: "status") as! NSString) as String)
-
+            
             self.booksRecord.pixURL  = ((record.object(forKey: "pixURL") as! NSString) as String)
             self.booksRecord.format  = ((record.object(forKey: "format") as! NSString) as String)
             self.booksRecord.rating  = ((record.object(forKey: "rating") as! Int) as Int)
             //
             self.booksArray.append(self.booksRecord)
-            print(self.booksRecord)
+            print(self.booksRecord)        }
+        operation.queryCompletionBlock = {
+            (cursor, error) in
+            if let error = error {
+              print(error.localizedDescription)
+            } else if let cursor = cursor {
+                self.fetchBooks(cursor)
+                print("cursor has more")
+            } else {
+                print("complete")
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
         }
-        
-        privateDatabase.add(queryOperation)
-        print(self.booksArray)
-        
-        print("count a loop")
+        privateDatabase.add(operation)
+//        CKContainer.default().publicCloudDatabase.add(operation)
+    }
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if booksArray.count == 0 {
+            fetchBooks()
+        } else {
+            self.tableView.reloadData()
+            print("array already loaded")
+        }
     }
     
     

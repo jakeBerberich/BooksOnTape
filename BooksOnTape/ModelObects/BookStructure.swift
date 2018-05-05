@@ -22,11 +22,11 @@ struct Books: Codable {
     
     
     private enum CodingKeys: String, CodingKey {
-        case authorFirst = "Author First"
-        case authorLast =  "Author Last"
+        case authorFirst = "AuthorFirst"
+        case authorLast =  "AuthorLast"
         case title = "Title"
         case series = "Series"
-        case fullName = "Full Name"
+        case fullName = "FullName"
         case status = "Status"
         case pixURL = "PixURL"
         case format = "Format"

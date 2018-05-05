@@ -18,9 +18,9 @@
 		005615AB204F472700128C53 /* RemoteFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005615AA204F472700128C53 /* RemoteFunctions.swift */; };
 		005615AD204F4B9B00128C53 /* authors.json in Resources */ = {isa = PBXBuildFile; fileRef = 005615AC204F4B9B00128C53 /* authors.json */; };
 		008C73AF205E847B00989377 /* GetFromCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008C73AE205E847B00989377 /* GetFromCloudKit.swift */; };
+		008C73B42069535200989377 /* books.json in Resources */ = {isa = PBXBuildFile; fileRef = 008C73B32069535100989377 /* books.json */; };
 		00ADB37520540CBE00EA20F1 /* AuthorsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ADB37420540CBE00EA20F1 /* AuthorsVC.swift */; };
 		00ADB37720547F3E00EA20F1 /* BooksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ADB37620547F3E00EA20F1 /* BooksVC.swift */; };
-		00ADB379205484C000EA20F1 /* books.json in Resources */ = {isa = PBXBuildFile; fileRef = 00ADB378205484C000EA20F1 /* books.json */; };
 		00ADB37D2056F46100EA20F1 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00ADB37C2056F46100EA20F1 /* CloudKit.framework */; };
 		00B5ECBD2057086400F5D762 /* ConnectionDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5ECBC2057086400F5D762 /* ConnectionDB.swift */; };
 /* End PBXBuildFile section */
@@ -39,9 +39,9 @@
 		005615AA204F472700128C53 /* RemoteFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFunctions.swift; sourceTree = "<group>"; };
 		005615AC204F4B9B00128C53 /* authors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = authors.json; sourceTree = "<group>"; };
 		008C73AE205E847B00989377 /* GetFromCloudKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFromCloudKit.swift; sourceTree = "<group>"; };
+		008C73B32069535100989377 /* books.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = books.json; sourceTree = "<group>"; };
 		00ADB37420540CBE00EA20F1 /* AuthorsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsVC.swift; sourceTree = "<group>"; };
 		00ADB37620547F3E00EA20F1 /* BooksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksVC.swift; sourceTree = "<group>"; };
-		00ADB378205484C000EA20F1 /* books.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = books.json; sourceTree = "<group>"; };
 		00ADB37A2056F09C00EA20F1 /* BooksOnTape.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BooksOnTape.entitlements; sourceTree = "<group>"; };
 		00ADB37C2056F46100EA20F1 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		00B5ECBC2057086400F5D762 /* ConnectionDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionDB.swift; sourceTree = "<group>"; };
@@ -94,8 +94,8 @@
 		0039F40F204F237D0080EDEA /* ModelObects */ = {
 			isa = PBXGroup;
 			children = (
+				008C73B32069535100989377 /* books.json */,
 				005615AC204F4B9B00128C53 /* authors.json */,
-				00ADB378205484C000EA20F1 /* books.json */,
 				0039F414204F24B90080EDEA /* AuthorStructures.swift */,
 				0039F416204F2AE50080EDEA /* BookStructure.swift */,
 				005615AA204F472700128C53 /* RemoteFunctions.swift */,
@@ -191,7 +191,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00ADB379205484C000EA20F1 /* books.json in Resources */,
+				008C73B42069535200989377 /* books.json in Resources */,
 				005615AD204F4B9B00128C53 /* authors.json in Resources */,
 				0039F408204F23070080EDEA /* LaunchScreen.storyboard in Resources */,
 				0039F405204F23070080EDEA /* Assets.xcassets in Resources */,
