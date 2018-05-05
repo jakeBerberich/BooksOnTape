@@ -103,7 +103,8 @@ class AuthorsVC: UITableViewController {
             authorRecord.authorPixAddress = (record.object(forKey: "authorPixAddress") as? String)!
             authorsArray.append(authorRecord)
             self.tableView.reloadData()
-            print(authorsArray[0].first)
+            
+            authorsArray.sort(by: {$0.last < $1.last})
             
         }
     }

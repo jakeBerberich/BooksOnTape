@@ -27,6 +27,7 @@ class BooksVC: UITableViewController {
     
     @IBAction func load(_ sender: Any) {
     self.tableView.reloadData()
+          booksArray.sort(by: {$0.authorLast < $1.authorLast})
         if booksArray.count != 0 {
             print("array already loaded")
         }
