@@ -24,14 +24,32 @@ class BooksVC: UITableViewController {
     
     
     public typealias YourFetchCompletionHandler = (_ records: [CKRecord]?, _ cursor: CKQueryCursor?) -> (Void)
+   
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        if booksArray.count == 0 {
+            fetchBooks()
+        } else {
+            self.tableView.reloadData()
+            print("array already loaded")
+        }
+    }
+    
+    
     
     @IBAction func load(_ sender: Any) {
     self.tableView.reloadData()
           booksArray.sort(by: {$0.authorLast < $1.authorLast})
         if booksArray.count != 0 {
-            print("array already loaded")
+            print("array already loaded \(booksArray.count) ")
         }
     }
+    
+    
+    
+    
     
     
     func fetchBooks(_ cursor: CKQueryCursor? = nil) {
@@ -55,46 +73,40 @@ class BooksVC: UITableViewController {
             self.booksRecord.authorFirst  = ((record.object(forKey: "authorFirst" ) as! NSString) as String)
             self.booksRecord.authorLast  = ((record.object(forKey:   "authorLast") as! NSString) as String)
             self.booksRecord.title  = ((record.object(forKey:   "title") as! NSString) as String)
-            
-            // self.booksRecord.series  = ((record.object(forKey: "series") as! NSString) as String)
-            //  self.booksRecord.fullName  = ((record.object(forKey: "fullName") as! NSString) as String)
+             self.booksRecord.series  = ((record.object(forKey: "series") as! NSString) as String)
+              self.booksRecord.fullName  = ((record.object(forKey: "fullName") as! NSString) as String)
             self.booksRecord.status  = ((record.object(forKey: "status") as! NSString) as String)
-            
             self.booksRecord.pixURL  = ((record.object(forKey: "pixURL") as! NSString) as String)
             self.booksRecord.format  = ((record.object(forKey: "format") as! NSString) as String)
             self.booksRecord.rating  = ((record.object(forKey: "rating") as! Int) as Int)
             //
             self.booksArray.append(self.booksRecord)
-            print(self.booksRecord)        }
+            //print(self.booksRecord)
+            
+        }
+        
+        
         operation.queryCompletionBlock = {
             (cursor, error) in
             if let error = error {
               print(error.localizedDescription)
             } else if let cursor = cursor {
                 self.fetchBooks(cursor)
-                print("cursor has more")
+               // print("cursor has more")
             } else {
                 print("complete")
                 DispatchQueue.main.async {
+                    let selectedAuthorArray = self.booksArray.filter({return $0.authorLast == self.lastIn})
+                    print(selectedAuthorArray)
                     self.tableView.reloadData()
                 }
             }
         }
         privateDatabase.add(operation)
-//        CKContainer.default().publicCloudDatabase.add(operation)
     }
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        if booksArray.count == 0 {
-            fetchBooks()
-        } else {
-            self.tableView.reloadData()
-            print("array already loaded")
-        }
-    }
-    
+   
     
     
  

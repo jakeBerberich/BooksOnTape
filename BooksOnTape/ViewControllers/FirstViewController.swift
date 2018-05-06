@@ -17,13 +17,12 @@ class FirstViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       getJson()
-     print(booksArray)
+ 
         
     }
   
     @IBAction func loadAuthorsToCloud(_ sender: Any) {
-      //loadBooks()
+  //    loadBooks()
    //loadAuthors()
     }
     

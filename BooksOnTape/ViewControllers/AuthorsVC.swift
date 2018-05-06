@@ -1,8 +1,9 @@
 //
 //  AuthorsVCTableViewController.swift
 //  BooksOnTape
-//
-//  Created by Jake Berberich on 3/10/18.
+//  https://www.youtube.com/watch?v=RSxfGGdA8QE
+
+// https://www.youtube.com/watch?v=NolPQP2E1O0//  Created by Jake Berberich on 3/10/18.
 //  Copyright © 2018 Jake Berberich. All rights reserved.
 //
 import Foundation
@@ -16,12 +17,15 @@ class AuthorsVC: UITableViewController {
     var authorRecord = Authors()
     
     var authorsArray = [Authors]()
+    var selectedIndex: IndexPath = [0,0]
+    var segueFirst: String = "jake"
+    var segueLast: String = "berberich"
    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getData()
+        fetchAuthors()
   
     }
     @IBAction func loadSubfile(_ sender: Any) {
@@ -33,63 +37,48 @@ class AuthorsVC: UITableViewController {
         }
     }
     
-    func getData() {
-        let predicate = NSPredicate(value: true)
-        let query = CKQuery(recordType: RemoteFunctions.RemoteRecords.authorsDB, predicate: predicate)
-        let sort = NSSortDescriptor(key: "last", ascending: true)
-        query.sortDescriptors = [sort]
-        let operation = CKQueryOperation(query: query)
+    func fetchAuthors(_ cursor: CKQueryCursor? = nil) {
         let cloudContainer = CKContainer.default()
         let privateDatabase = cloudContainer.privateCloudDatabase
-        
-        operation.queuePriority = .veryHigh
-        
+        var operation: CKQueryOperation!
+        let predicate = NSPredicate(value: true)
+       // let query = CKQuery(recordType: RemoteFunctions.RemoteRecords.authorsDB, predicate: predicate)
+      
+        if let cursor = cursor {
+            operation = CKQueryOperation(cursor: cursor)
+        } else {
+            
+            let predicate =   NSPredicate(value: true)
+            
+            let query = CKQuery(recordType: RemoteFunctions.RemoteRecords.authorsDB, predicate: predicate)
+            operation = CKQueryOperation(query: query)
+        }
         
         operation.recordFetchedBlock = { (record: CKRecord) in
             self.allRecords.append(record)
-   
             print(record)
         }
         
         operation.queryCompletionBlock =  {
             cursor, error in
-            if error !=  nil {
-                print(error!.localizedDescription)
+            if let error = error {
+                print(error.localizedDescription)
+            } else  if let cursor = cursor {
+                    self.fetchAuthors(cursor)
+                    print("cursor has more Authors")
             } else {
-                if cursor != nil {
-                    print("total First records: \(self.allRecords.count)")
-                    self.queryServer(cursor!)
-                }
+                        print("all Authors Retrieved")
+                        DispatchQueue.main.async {
+                            self.loadAuthorArray()
+                            self.tableView.reloadData()
+                        }
             }
         }
         privateDatabase.add(operation)
     }
     
     
-    func queryServer(_ cursor: CKQueryCursor) {
-        let operation = CKQueryOperation(cursor: cursor)
-        let cloudContainer = CKContainer.default()
-        let privateDatabase = cloudContainer.privateCloudDatabase
-        
-        operation.recordFetchedBlock = { (record: CKRecord) in
-            self.allRecords.append(record)
-            // print(record)
-        }
-        operation.queryCompletionBlock = {
-            cursor, error in
-            if error !=  nil {
-                print(error!.localizedDescription)
-            } else {
-                if cursor != nil {
-                    print("total records: \(self.allRecords.count)")
-                    self.queryServer(cursor!)
-                }
-            }
-        }
-        privateDatabase.add(operation)
-        
-    }
-    
+ 
     func loadAuthorArray () {
         for record in allRecords {
             
@@ -103,33 +92,22 @@ class AuthorsVC: UITableViewController {
             authorRecord.authorPixAddress = (record.object(forKey: "authorPixAddress") as? String)!
             authorsArray.append(authorRecord)
             self.tableView.reloadData()
-            
-            authorsArray.sort(by: {$0.last < $1.last})
-            
         }
+        authorsArray.sort(by: {$0.last < $1.last})
     }
     
-    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let showBooks  = UIContextualAction(style: .normal, title: "Show Books")  { (action, view, nil) in
-            print("ShowBooks")
-            
-        }
-        showBooks.backgroundColor = #colorLiteral(red: 0.09916844219, green: 0.277671814, blue: 0.9211903811, alpha: 1)
-        
-        let swipeConfig =  UISwipeActionsConfiguration(actions: [showBooks])
-        swipeConfig.performsFirstActionWithFullSwipe = false
-        self.performSegue(withIdentifier: "showBooks", sender: Any?.self)
-        return swipeConfig
-    }
+    
     
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "showBooks" {
     print("segue fired")
-        print(authorsArray)
+        //print(authorsArray)
         let indexPath = self.tableView.indexPathForSelectedRow
         let destinationVC = segue.destination as! BooksVC
-        destinationVC.firstIn = self.authorsArray[indexPath!.row].first
-        destinationVC.lastIn = self.authorsArray[indexPath!.row].last
+       
+        destinationVC.firstIn = segueFirst
+        destinationVC.lastIn = segueLast
+        
     }
     }
 
@@ -149,12 +127,35 @@ class AuthorsVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-          let authorRow = self.authorsArray[indexPath.row]
+        let authorRow = self.authorsArray[indexPath.row]
         cell.textLabel?.text = (" \(authorRow.last), \(authorRow.first)")
         cell.detailTextLabel?.text = ("Rating: \(authorRow.rating)")
         return cell
     }
-
-
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let showBooks = UITableViewRowAction(style: .default, title: "Show Books") {(action, index) in
+            print ("index \(index)")
+            print("\(self.authorsArray[indexPath.row].last)")
+            self.selectedIndex = indexPath
+            self.segueLast = self.authorsArray[indexPath.row].last
+            self.segueFirst = self.authorsArray[indexPath.row].first
+            self.performSegue(withIdentifier: "showBooks", sender: self)
+        }
+        showBooks.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        return[showBooks]
+    }
+    
+    
+    
+//    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        let showBooks  = UIContextualAction(style: .normal, title: "Show Books")  { (action, view, nil) in
+//            print("ShowBooks")
+//        }
+//   showBooks.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+//    let config = UISwipeActionsConfiguration(actions: [showBooks])
+//        config.performsFirstActionWithFullSwipe = false
+//        return config
+//    }
    
 }
