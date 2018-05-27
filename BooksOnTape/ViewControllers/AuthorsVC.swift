@@ -26,6 +26,7 @@ class AuthorsVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchAuthors()
+    
   
     }
     @IBAction func loadSubfile(_ sender: Any) {
@@ -101,7 +102,7 @@ class AuthorsVC: UITableViewController {
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "showBooks" {
     print("segue fired")
-        //print(authorsArray)
+        // print(booksArray)
         let indexPath = self.tableView.indexPathForSelectedRow
         let destinationVC = segue.destination as! BooksVC
        

@@ -5,6 +5,7 @@
 //  Created by Jake Berberich on 3/10/18.
 //  Copyright © 2018 Jake Berberich. All rights reserved.
 //
+var saveBookArray = [Books]()
 
 import UIKit
 import CloudKit
@@ -13,6 +14,7 @@ class BooksVC: UITableViewController {
 
    let remoteFunctions = RemoteFunctions()
     var booksArray = [Books]()
+    var selectedBookArray = [Books]()
     var booksRecord =  Books()
     var recordArray = [CKRecord]()
     var allRecords: [CKRecord] = []
@@ -29,10 +31,12 @@ class BooksVC: UITableViewController {
         super.viewDidLoad()
         
         
-        if booksArray.count == 0 {
+        if saveBookArray.count == 0 {
             fetchBooks()
         } else {
-            self.tableView.reloadData()
+            booksArray = saveBookArray
+            self.selectedBookArray = self.booksArray.filter({return $0.authorLast == self.lastIn})
+                self.tableView.reloadData()
             print("array already loaded")
         }
     }
@@ -40,11 +44,12 @@ class BooksVC: UITableViewController {
     
     
     @IBAction func load(_ sender: Any) {
-    self.tableView.reloadData()
-          booksArray.sort(by: {$0.authorLast < $1.authorLast})
-        if booksArray.count != 0 {
-            print("array already loaded \(booksArray.count) ")
-        }
+//    self.tableView.reloadData()
+//          booksArray.sort(by: {$0.authorLast < $1.authorLast})
+//        if booksArray.count != 0 {
+//            print("array already loaded \(booksArray.count) ")
+//        }
+   print(saveBookArray)
     }
     
     
@@ -96,8 +101,10 @@ class BooksVC: UITableViewController {
             } else {
                 print("complete")
                 DispatchQueue.main.async {
-                    let selectedAuthorArray = self.booksArray.filter({return $0.authorLast == self.lastIn})
-                    print(selectedAuthorArray)
+                    self.selectedBookArray = self.booksArray.filter({return $0.authorLast == self.lastIn})
+                    
+                    saveBookArray = self.booksArray
+                    print(self.selectedBookArray)
                     self.tableView.reloadData()
                 }
             }
@@ -121,14 +128,15 @@ class BooksVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return booksArray.count
+        //return booksArray.count
+        return selectedBookArray.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        let bookRow = self.booksArray[indexPath.row]
+        let bookRow = self.selectedBookArray[indexPath.row]
+        // let bookRow = self.booksArray[indexPath.row]
         cell.textLabel?.text = (" \(bookRow.title)")
         cell.detailTextLabel?.text = ("Author: \(bookRow.authorLast),  \(bookRow.authorFirst)")
         return cell
