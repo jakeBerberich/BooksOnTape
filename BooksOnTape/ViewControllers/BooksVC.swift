@@ -41,24 +41,10 @@ class BooksVC: UITableViewController {
         }
     }
     
-    
-    
-    @IBAction func load(_ sender: Any) {
-//    self.tableView.reloadData()
-//          booksArray.sort(by: {$0.authorLast < $1.authorLast})
-//        if booksArray.count != 0 {
-//            print("array already loaded \(booksArray.count) ")
-//        }
-   print(saveBookArray)
-    }
-    
-    
-    
-    
-    
+
     
     func fetchBooks(_ cursor: CKQueryCursor? = nil) {
-        print("fetch Books:  \(cursor)")
+       
         let cloudContainer = CKContainer.default()
         let privateDatabase = cloudContainer.privateCloudDatabase
         var operation: CKQueryOperation!
@@ -111,14 +97,7 @@ class BooksVC: UITableViewController {
         }
         privateDatabase.add(operation)
     }
-    
-    
-   
-    
-    
- 
-    
-    
+
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -138,7 +117,7 @@ class BooksVC: UITableViewController {
         let bookRow = self.selectedBookArray[indexPath.row]
         // let bookRow = self.booksArray[indexPath.row]
         cell.textLabel?.text = (" \(bookRow.title)")
-        cell.detailTextLabel?.text = ("Author: \(bookRow.authorLast),  \(bookRow.authorFirst)")
+        cell.detailTextLabel?.text = ("Author: \(bookRow.authorLast),  \(bookRow.authorFirst)      Series: \(bookRow.series)")
         return cell
     }
      

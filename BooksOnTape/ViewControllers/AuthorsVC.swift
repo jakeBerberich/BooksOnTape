@@ -29,21 +29,13 @@ class AuthorsVC: UITableViewController {
     
   
     }
-    @IBAction func loadSubfile(_ sender: Any) {
-           self.tableView.reloadData()
-        loadAuthorArray()
-        print(authorsArray.count)
-        for authors in authorsArray {
-            print(authors.last)
-        }
-    }
+  
     
     func fetchAuthors(_ cursor: CKQueryCursor? = nil) {
         let cloudContainer = CKContainer.default()
         let privateDatabase = cloudContainer.privateCloudDatabase
         var operation: CKQueryOperation!
-        let predicate = NSPredicate(value: true)
-       // let query = CKQuery(recordType: RemoteFunctions.RemoteRecords.authorsDB, predicate: predicate)
+ 
       
         if let cursor = cursor {
             operation = CKQueryOperation(cursor: cursor)
@@ -84,7 +76,7 @@ class AuthorsVC: UITableViewController {
         for record in allRecords {
             
             authorRecord.authorID = (record.object(forKey: "authorID") as? Int)!
-            authorRecord.first = (record.object(forKey: "first" ) as? String!)!
+            authorRecord.first = (record.object(forKey: "first" ) as? String)!
             authorRecord.last = (record.object(forKey: "last") as? String)!
             authorRecord.rating = (record.object(forKey: "rating") as? Int)!
             authorRecord.recentBooks = (record.object(forKey: "recentBooks") as? String)!
@@ -101,9 +93,7 @@ class AuthorsVC: UITableViewController {
     
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "showBooks" {
-    print("segue fired")
-        // print(booksArray)
-        let indexPath = self.tableView.indexPathForSelectedRow
+ 
         let destinationVC = segue.destination as! BooksVC
        
         destinationVC.firstIn = segueFirst
@@ -147,16 +137,5 @@ class AuthorsVC: UITableViewController {
         return[showBooks]
     }
     
-    
-    
-//    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//        let showBooks  = UIContextualAction(style: .normal, title: "Show Books")  { (action, view, nil) in
-//            print("ShowBooks")
-//        }
-//   showBooks.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
-//    let config = UISwipeActionsConfiguration(actions: [showBooks])
-//        config.performsFirstActionWithFullSwipe = false
-//        return config
-//    }
    
 }
